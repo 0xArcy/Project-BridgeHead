@@ -1,0 +1,1263 @@
+﻿
+
+TimeCreated      : 4/10/2026 10:01:35 PM
+Id               : 5007
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus Configuration has changed. If this is an unexpected event you should review the settings as this may be the result of malware.
+                    	Old value: HKLM\SOFTWARE\Microsoft\Windows Defender\CoreService\WdConfigHash = 0xE589E35D
+                    	New value: HKLM\SOFTWARE\Microsoft\Windows Defender\CoreService\WdConfigHash = 0x447C29
+
+TimeCreated      : 4/10/2026 10:01:35 PM
+Id               : 2000
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus security intelligence version updated.
+                    	Current security intelligence Version: 1.449.34.0
+                    	Previous security intelligence Version: 1.449.16.0
+                    	Security intelligence Type: AntiSpyware
+                    	Update Type: Delta
+                    	User: NT AUTHORITY\SYSTEM
+                    	Current Engine Version: 1.1.26030.3008
+                    	Previous Engine Version: 1.1.26030.3008
+
+TimeCreated      : 4/10/2026 10:01:35 PM
+Id               : 2000
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus security intelligence version updated.
+                    	Current security intelligence Version: 1.449.34.0
+                    	Previous security intelligence Version: 1.449.16.0
+                    	Security intelligence Type: AntiVirus
+                    	Update Type: Delta
+                    	User: NT AUTHORITY\SYSTEM
+                    	Current Engine Version: 1.1.26030.3008
+                    	Previous Engine Version: 1.1.26030.3008
+
+TimeCreated      : 4/10/2026 9:58:24 PM
+Id               : 5007
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus Configuration has changed. If this is an unexpected event you should review the settings as this may be the result of malware.
+                    	Old value: HKLM\SOFTWARE\Microsoft\Windows Defender\UX Configuration\ToastOrSsoTrigger = 0x1
+                    	New value: HKLM\SOFTWARE\Microsoft\Windows Defender\UX Configuration\ToastOrSsoTrigger = 0x0
+
+TimeCreated      : 4/9/2026 11:35:09 PM
+Id               : 1151
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client health report (time in UTC):
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26030.3008
+                    	Network Realtime Inspection engine version: 1.1.26030.3008
+                    	Antivirus security intelligence version: 1.449.16.0
+                    	Antispyware security intelligence version: 1.449.16.0
+                    	Network Realtime Inspection security intelligence version: 1.449.16.0
+                    	RTP state: Enabled
+                    	OA state: Enabled
+                    	IOAV state: Enabled
+                    	BM state: Enabled
+                    	Antivirus security intelligence age: 0
+                    	Antispyware security intelligence age: 0
+                    	Last quick scan age: 2
+                    	Last full scan age: 1313
+                    	Antivirus security intelligence creation time: 2026-04-09T21:25:24Z
+                    	Antispyware security intelligence creation time: 2026-04-09T21:25:24Z
+                    	Last quick scan start time: 2026-04-07T18:29:38Z
+                    	Last quick scan end time: 2026-04-07T18:32:11Z
+                    	Last quick scan source: 2
+                    	Last full scan start time: 2022-09-04T12:58:41Z
+                    	Last full scan end time: 2022-09-04T13:43:55Z
+                    	Last full scan source: 1
+                    	Product status: 0x00080000
+                   
+
+TimeCreated      : 4/9/2026 11:35:09 PM
+Id               : 1150
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client is up and running in a healthy state.
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26030.3008
+                    	Security intelligence version: 1.449.16.0
+                   
+
+TimeCreated      : 4/9/2026 11:29:32 PM
+Id               : 2010
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus used cloud protection to get additional security intelligence.
+                    	Current security intelligence Version: 1.449.16.0
+                    	Security intelligence Type: 
+                    	User: \
+                    	Current Engine Version: 1.1.26030.3008
+                    	Cloud protection intelligence Type: Security intelligence update
+                    	Persistence Path: C:\ProgramData\Microsoft\Windows Defender\Scans\RtSigs\data\5343b5efb38c7e823d13f0215815d3699c63c631
+                    	Cloud protection intelligence Version: 0.0.0.0
+                    	Cloud protection intelligence Compilation Timestamp: 4/10/2026 3:29:32 AM
+                    	Persistence Limit Type: Duration
+                    	Persistence Limit: 288000000
+
+TimeCreated      : 4/9/2026 11:27:00 PM
+Id               : 2010
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus used cloud protection to get additional security intelligence.
+                    	Current security intelligence Version: 1.449.16.0
+                    	Security intelligence Type: 
+                    	User: \
+                    	Current Engine Version: 1.1.26030.3008
+                    	Cloud protection intelligence Type: Security intelligence update
+                    	Persistence Path: C:\ProgramData\Microsoft\Windows Defender\Scans\RtSigs\data\258fcfefdd6aa79ea5ceca023d082f7a62ce7822
+                    	Cloud protection intelligence Version: 0.0.0.0
+                    	Cloud protection intelligence Compilation Timestamp: 4/10/2026 3:27:01 AM
+                    	Persistence Limit Type: Duration
+                    	Persistence Limit: 1728000000
+
+TimeCreated      : 4/9/2026 11:26:59 PM
+Id               : 2010
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus used cloud protection to get additional security intelligence.
+                    	Current security intelligence Version: 1.449.16.0
+                    	Security intelligence Type: 
+                    	User: \
+                    	Current Engine Version: 1.1.26030.3008
+                    	Cloud protection intelligence Type: Security intelligence update
+                    	Persistence Path: C:\ProgramData\Microsoft\Windows Defender\Scans\RtSigs\data\03e075a3d0c733eb016d33bde8b61bd772d38f3b
+                    	Cloud protection intelligence Version: 0.0.0.0
+                    	Cloud protection intelligence Compilation Timestamp: 4/10/2026 3:26:59 AM
+                    	Persistence Limit Type: Duration
+                    	Persistence Limit: 1728000000
+
+TimeCreated      : 4/9/2026 11:26:55 PM
+Id               : 2010
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus used cloud protection to get additional security intelligence.
+                    	Current security intelligence Version: 1.449.16.0
+                    	Security intelligence Type: 
+                    	User: \
+                    	Current Engine Version: 1.1.26030.3008
+                    	Cloud protection intelligence Type: Security intelligence update
+                    	Persistence Path: C:\ProgramData\Microsoft\Windows Defender\Scans\RtSigs\data\8ffc86015608a4d9115aa1929aaebd7444e4f52a
+                    	Cloud protection intelligence Version: 0.0.0.0
+                    	Cloud protection intelligence Compilation Timestamp: 4/10/2026 3:26:56 AM
+                    	Persistence Limit Type: Duration
+                    	Persistence Limit: 50065408
+
+TimeCreated      : 4/9/2026 11:24:25 PM
+Id               : 5007
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus Configuration has changed. If this is an unexpected event you should review the settings as this may be the result of malware.
+                    	Old value: HKLM\SOFTWARE\Microsoft\Windows Defender\CoreService\WdConfigHash = 0xF43CDC1D
+                    	New value: HKLM\SOFTWARE\Microsoft\Windows Defender\CoreService\WdConfigHash = 0xE589E35D
+
+TimeCreated      : 4/9/2026 11:24:25 PM
+Id               : 2000
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus security intelligence version updated.
+                    	Current security intelligence Version: 1.449.16.0
+                    	Previous security intelligence Version: 1.447.236.0
+                    	Security intelligence Type: AntiSpyware
+                    	Update Type: Full
+                    	User: NT AUTHORITY\SYSTEM
+                    	Current Engine Version: 1.1.26030.3008
+                    	Previous Engine Version: 1.1.26020.3
+
+TimeCreated      : 4/9/2026 11:24:25 PM
+Id               : 2000
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus security intelligence version updated.
+                    	Current security intelligence Version: 1.449.16.0
+                    	Previous security intelligence Version: 1.447.236.0
+                    	Security intelligence Type: AntiVirus
+                    	Update Type: Full
+                    	User: NT AUTHORITY\SYSTEM
+                    	Current Engine Version: 1.1.26030.3008
+                    	Previous Engine Version: 1.1.26020.3
+
+TimeCreated      : 4/9/2026 11:24:25 PM
+Id               : 2002
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus engine version has been updated.
+                    	Current Engine Version: 1.1.26030.3008
+                    	Previous Engine Version: 1.1.26020.3
+                    	User: NT AUTHORITY\SYSTEM
+
+TimeCreated      : 4/9/2026 10:35:09 PM
+Id               : 1151
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client health report (time in UTC):
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Network Realtime Inspection engine version: 1.1.26020.3
+                    	Antivirus security intelligence version: 1.447.236.0
+                    	Antispyware security intelligence version: 1.447.236.0
+                    	Network Realtime Inspection security intelligence version: 1.447.236.0
+                    	RTP state: Enabled
+                    	OA state: Enabled
+                    	IOAV state: Enabled
+                    	BM state: Enabled
+                    	Antivirus security intelligence age: 1
+                    	Antispyware security intelligence age: 1
+                    	Last quick scan age: 2
+                    	Last full scan age: 1313
+                    	Antivirus security intelligence creation time: 2026-04-08T15:46:35Z
+                    	Antispyware security intelligence creation time: 2026-04-08T15:46:35Z
+                    	Last quick scan start time: 2026-04-07T18:29:38Z
+                    	Last quick scan end time: 2026-04-07T18:32:11Z
+                    	Last quick scan source: 2
+                    	Last full scan start time: 2022-09-04T12:58:41Z
+                    	Last full scan end time: 2022-09-04T13:43:55Z
+                    	Last full scan source: 1
+                    	Product status: 0x00080000
+                   
+
+TimeCreated      : 4/9/2026 10:35:09 PM
+Id               : 1150
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client is up and running in a healthy state.
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Security intelligence version: 1.447.236.0
+                   
+
+TimeCreated      : 4/9/2026 9:35:09 PM
+Id               : 1151
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client health report (time in UTC):
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Network Realtime Inspection engine version: 1.1.26020.3
+                    	Antivirus security intelligence version: 1.447.236.0
+                    	Antispyware security intelligence version: 1.447.236.0
+                    	Network Realtime Inspection security intelligence version: 1.447.236.0
+                    	RTP state: Enabled
+                    	OA state: Enabled
+                    	IOAV state: Enabled
+                    	BM state: Enabled
+                    	Antivirus security intelligence age: 1
+                    	Antispyware security intelligence age: 1
+                    	Last quick scan age: 2
+                    	Last full scan age: 1313
+                    	Antivirus security intelligence creation time: 2026-04-08T15:46:35Z
+                    	Antispyware security intelligence creation time: 2026-04-08T15:46:35Z
+                    	Last quick scan start time: 2026-04-07T18:29:38Z
+                    	Last quick scan end time: 2026-04-07T18:32:11Z
+                    	Last quick scan source: 2
+                    	Last full scan start time: 2022-09-04T12:58:41Z
+                    	Last full scan end time: 2022-09-04T13:43:55Z
+                    	Last full scan source: 1
+                    	Product status: 0x00080000
+                   
+
+TimeCreated      : 4/9/2026 9:35:09 PM
+Id               : 1150
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client is up and running in a healthy state.
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Security intelligence version: 1.447.236.0
+                   
+
+TimeCreated      : 4/9/2026 8:48:00 PM
+Id               : 5007
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus Configuration has changed. If this is an unexpected event you should review the settings as this may be the result of malware.
+                    	Old value: HKLM\SOFTWARE\Microsoft\Windows Defender\UX Configuration\ToastOrSsoTrigger = 0x0
+                    	New value: HKLM\SOFTWARE\Microsoft\Windows Defender\UX Configuration\ToastOrSsoTrigger = 0x1
+
+TimeCreated      : 4/9/2026 8:30:36 PM
+Id               : 1002
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus scan has been stopped before completion.
+                    	Scan ID: {5A2C3470-1BC2-40BB-B034-55A6744793BB}
+                    	Scan Type: Antimalware
+                    	Scan Parameters: Quick Scan
+                     	User: NT AUTHORITY\SYSTEM
+                    	Stop Reason: Scheduled scan was skipped because the last successful scan was within the last 7 days
+
+TimeCreated      : 4/9/2026 8:30:36 PM
+Id               : 1000
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus scan has started.
+                    	Scan ID: {5A2C3470-1BC2-40BB-B034-55A6744793BB}
+                    	Scan Type: Antimalware
+                    	Scan Parameters: Quick Scan
+                    	Scan Resources: 
+                     	User: NT AUTHORITY\SYSTEM
+                    	Scan Trigger: Scheduled maintenance
+                    	Scan Only If Idle: Enabled
+                    	Low CPU Priority for Scans: Disabled
+                    	Thread Priority: 7
+
+TimeCreated      : 4/9/2026 8:20:12 PM
+Id               : 1151
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client health report (time in UTC):
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Network Realtime Inspection engine version: 1.1.26020.3
+                    	Antivirus security intelligence version: 1.447.236.0
+                    	Antispyware security intelligence version: 1.447.236.0
+                    	Network Realtime Inspection security intelligence version: 1.447.236.0
+                    	RTP state: Enabled
+                    	OA state: Enabled
+                    	IOAV state: Enabled
+                    	BM state: Enabled
+                    	Antivirus security intelligence age: 1
+                    	Antispyware security intelligence age: 1
+                    	Last quick scan age: 2
+                    	Last full scan age: 1313
+                    	Antivirus security intelligence creation time: 2026-04-08T15:46:35Z
+                    	Antispyware security intelligence creation time: 2026-04-08T15:46:35Z
+                    	Last quick scan start time: 2026-04-07T18:29:38Z
+                    	Last quick scan end time: 2026-04-07T18:32:11Z
+                    	Last quick scan source: 2
+                    	Last full scan start time: 2022-09-04T12:58:41Z
+                    	Last full scan end time: 2022-09-04T13:43:55Z
+                    	Last full scan source: 1
+                    	Product status: 0x00080000
+                   
+
+TimeCreated      : 4/9/2026 8:20:12 PM
+Id               : 1150
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client is up and running in a healthy state.
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Security intelligence version: 1.447.236.0
+                   
+
+TimeCreated      : 4/9/2026 8:10:05 PM
+Id               : 5007
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus Configuration has changed. If this is an unexpected event you should review the settings as this may be the result of malware.
+                    	Old value: HKLM\SOFTWARE\Microsoft\Windows Defender\UX Configuration\ToastOrSsoTrigger = 0x1
+                    	New value: HKLM\SOFTWARE\Microsoft\Windows Defender\UX Configuration\ToastOrSsoTrigger = 0x0
+
+TimeCreated      : 4/9/2026 1:42:29 PM
+Id               : 1151
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client health report (time in UTC):
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Network Realtime Inspection engine version: 1.1.26020.3
+                    	Antivirus security intelligence version: 1.447.236.0
+                    	Antispyware security intelligence version: 1.447.236.0
+                    	Network Realtime Inspection security intelligence version: 1.447.236.0
+                    	RTP state: Enabled
+                    	OA state: Enabled
+                    	IOAV state: Enabled
+                    	BM state: Enabled
+                    	Antivirus security intelligence age: 1
+                    	Antispyware security intelligence age: 1
+                    	Last quick scan age: 1
+                    	Last full scan age: 1313
+                    	Antivirus security intelligence creation time: 2026-04-08T15:46:35Z
+                    	Antispyware security intelligence creation time: 2026-04-08T15:46:35Z
+                    	Last quick scan start time: 2026-04-07T18:29:38Z
+                    	Last quick scan end time: 2026-04-07T18:32:11Z
+                    	Last quick scan source: 2
+                    	Last full scan start time: 2022-09-04T12:58:41Z
+                    	Last full scan end time: 2022-09-04T13:43:55Z
+                    	Last full scan source: 1
+                    	Product status: 0x00080000
+                   
+
+TimeCreated      : 4/9/2026 1:42:29 PM
+Id               : 1150
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client is up and running in a healthy state.
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Security intelligence version: 1.447.236.0
+                   
+
+TimeCreated      : 4/9/2026 1:19:22 PM
+Id               : 2010
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus used cloud protection to get additional security intelligence.
+                    	Current security intelligence Version: 1.447.236.0
+                    	Security intelligence Type: 
+                    	User: \
+                    	Current Engine Version: 1.1.26020.3
+                    	Cloud protection intelligence Type: Security intelligence update
+                    	Persistence Path: C:\ProgramData\Microsoft\Windows Defender\Scans\RtSigs\data\a1c67545a25f1bbbbd3ad0bd904b27f2d51cfa2e
+                    	Cloud protection intelligence Version: 0.0.0.0
+                    	Cloud protection intelligence Compilation Timestamp: 4/9/2026 5:19:22 PM
+                    	Persistence Limit Type: Duration
+                    	Persistence Limit: 864000000
+
+TimeCreated      : 4/9/2026 1:18:17 PM
+Id               : 5007
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus Configuration has changed. If this is an unexpected event you should review the settings as this may be the result of malware.
+                    	Old value: HKLM\SOFTWARE\Microsoft\Windows Defender\UX Configuration\ToastOrSsoTrigger = 0x0
+                    	New value: HKLM\SOFTWARE\Microsoft\Windows Defender\UX Configuration\ToastOrSsoTrigger = 0x1
+
+TimeCreated      : 4/9/2026 10:13:29 AM
+Id               : 5007
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus Configuration has changed. If this is an unexpected event you should review the settings as this may be the result of malware.
+                    	Old value: HKLM\SOFTWARE\Microsoft\Windows Defender\CoreService\WdConfigHash = 0x13F5F6FD
+                    	New value: HKLM\SOFTWARE\Microsoft\Windows Defender\CoreService\WdConfigHash = 0xF43CDC1D
+
+TimeCreated      : 4/9/2026 10:13:28 AM
+Id               : 2000
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus security intelligence version updated.
+                    	Current security intelligence Version: 1.447.236.0
+                    	Previous security intelligence Version: 1.447.233.0
+                    	Security intelligence Type: AntiSpyware
+                    	Update Type: Delta
+                    	User: NT AUTHORITY\SYSTEM
+                    	Current Engine Version: 1.1.26020.3
+                    	Previous Engine Version: 1.1.26020.3
+
+TimeCreated      : 4/9/2026 10:13:28 AM
+Id               : 2000
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus security intelligence version updated.
+                    	Current security intelligence Version: 1.447.236.0
+                    	Previous security intelligence Version: 1.447.233.0
+                    	Security intelligence Type: AntiVirus
+                    	Update Type: Delta
+                    	User: NT AUTHORITY\SYSTEM
+                    	Current Engine Version: 1.1.26020.3
+                    	Previous Engine Version: 1.1.26020.3
+
+TimeCreated      : 4/9/2026 10:11:04 AM
+Id               : 5007
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus Configuration has changed. If this is an unexpected event you should review the settings as this may be the result of malware.
+                    	Old value: HKLM\SOFTWARE\Microsoft\Windows Defender\UX Configuration\ToastOrSsoTrigger = 0x1
+                    	New value: HKLM\SOFTWARE\Microsoft\Windows Defender\UX Configuration\ToastOrSsoTrigger = 0x0
+
+TimeCreated      : 4/9/2026 12:04:34 AM
+Id               : 1151
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client health report (time in UTC):
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Network Realtime Inspection engine version: 1.1.26020.3
+                    	Antivirus security intelligence version: 1.447.233.0
+                    	Antispyware security intelligence version: 1.447.233.0
+                    	Network Realtime Inspection security intelligence version: 1.447.233.0
+                    	RTP state: Enabled
+                    	OA state: Enabled
+                    	IOAV state: Enabled
+                    	BM state: Enabled
+                    	Antivirus security intelligence age: 0
+                    	Antispyware security intelligence age: 0
+                    	Last quick scan age: 1
+                    	Last full scan age: 1312
+                    	Antivirus security intelligence creation time: 2026-04-08T09:59:39Z
+                    	Antispyware security intelligence creation time: 2026-04-08T09:59:39Z
+                    	Last quick scan start time: 2026-04-07T18:29:38Z
+                    	Last quick scan end time: 2026-04-07T18:32:11Z
+                    	Last quick scan source: 2
+                    	Last full scan start time: 2022-09-04T12:58:41Z
+                    	Last full scan end time: 2022-09-04T13:43:55Z
+                    	Last full scan source: 1
+                    	Product status: 0x00080000
+                   
+
+TimeCreated      : 4/9/2026 12:04:34 AM
+Id               : 1150
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client is up and running in a healthy state.
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Security intelligence version: 1.447.233.0
+                   
+
+TimeCreated      : 4/8/2026 11:04:34 PM
+Id               : 1151
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client health report (time in UTC):
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Network Realtime Inspection engine version: 1.1.26020.3
+                    	Antivirus security intelligence version: 1.447.233.0
+                    	Antispyware security intelligence version: 1.447.233.0
+                    	Network Realtime Inspection security intelligence version: 1.447.233.0
+                    	RTP state: Enabled
+                    	OA state: Enabled
+                    	IOAV state: Enabled
+                    	BM state: Enabled
+                    	Antivirus security intelligence age: 0
+                    	Antispyware security intelligence age: 0
+                    	Last quick scan age: 1
+                    	Last full scan age: 1312
+                    	Antivirus security intelligence creation time: 2026-04-08T09:59:39Z
+                    	Antispyware security intelligence creation time: 2026-04-08T09:59:39Z
+                    	Last quick scan start time: 2026-04-07T18:29:38Z
+                    	Last quick scan end time: 2026-04-07T18:32:11Z
+                    	Last quick scan source: 2
+                    	Last full scan start time: 2022-09-04T12:58:41Z
+                    	Last full scan end time: 2022-09-04T13:43:55Z
+                    	Last full scan source: 1
+                    	Product status: 0x00080000
+                   
+
+TimeCreated      : 4/8/2026 11:04:34 PM
+Id               : 1150
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client is up and running in a healthy state.
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Security intelligence version: 1.447.233.0
+                   
+
+TimeCreated      : 4/8/2026 10:04:34 PM
+Id               : 1151
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client health report (time in UTC):
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Network Realtime Inspection engine version: 1.1.26020.3
+                    	Antivirus security intelligence version: 1.447.233.0
+                    	Antispyware security intelligence version: 1.447.233.0
+                    	Network Realtime Inspection security intelligence version: 1.447.233.0
+                    	RTP state: Enabled
+                    	OA state: Enabled
+                    	IOAV state: Enabled
+                    	BM state: Enabled
+                    	Antivirus security intelligence age: 0
+                    	Antispyware security intelligence age: 0
+                    	Last quick scan age: 1
+                    	Last full scan age: 1312
+                    	Antivirus security intelligence creation time: 2026-04-08T09:59:39Z
+                    	Antispyware security intelligence creation time: 2026-04-08T09:59:39Z
+                    	Last quick scan start time: 2026-04-07T18:29:38Z
+                    	Last quick scan end time: 2026-04-07T18:32:11Z
+                    	Last quick scan source: 2
+                    	Last full scan start time: 2022-09-04T12:58:41Z
+                    	Last full scan end time: 2022-09-04T13:43:55Z
+                    	Last full scan source: 1
+                    	Product status: 0x00080000
+                   
+
+TimeCreated      : 4/8/2026 10:04:34 PM
+Id               : 1150
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client is up and running in a healthy state.
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Security intelligence version: 1.447.233.0
+                   
+
+TimeCreated      : 4/8/2026 9:54:52 PM
+Id               : 2010
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus used cloud protection to get additional security intelligence.
+                    	Current security intelligence Version: 1.447.233.0
+                    	Security intelligence Type: 
+                    	User: \
+                    	Current Engine Version: 1.1.26020.3
+                    	Cloud protection intelligence Type: Security intelligence update
+                    	Persistence Path: C:\ProgramData\Microsoft\Windows Defender\Scans\RtSigs\data\c75a025b3735fcb06a2f37623b955cb4af2a9767
+                    	Cloud protection intelligence Version: 0.0.0.0
+                    	Cloud protection intelligence Compilation Timestamp: 4/9/2026 1:54:52 AM
+                    	Persistence Limit Type: Duration
+                    	Persistence Limit: 288000000
+
+TimeCreated      : 4/8/2026 9:04:34 PM
+Id               : 1151
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client health report (time in UTC):
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Network Realtime Inspection engine version: 1.1.26020.3
+                    	Antivirus security intelligence version: 1.447.233.0
+                    	Antispyware security intelligence version: 1.447.233.0
+                    	Network Realtime Inspection security intelligence version: 1.447.233.0
+                    	RTP state: Enabled
+                    	OA state: Enabled
+                    	IOAV state: Enabled
+                    	BM state: Enabled
+                    	Antivirus security intelligence age: 0
+                    	Antispyware security intelligence age: 0
+                    	Last quick scan age: 1
+                    	Last full scan age: 1312
+                    	Antivirus security intelligence creation time: 2026-04-08T09:59:39Z
+                    	Antispyware security intelligence creation time: 2026-04-08T09:59:39Z
+                    	Last quick scan start time: 2026-04-07T18:29:38Z
+                    	Last quick scan end time: 2026-04-07T18:32:11Z
+                    	Last quick scan source: 2
+                    	Last full scan start time: 2022-09-04T12:58:41Z
+                    	Last full scan end time: 2022-09-04T13:43:55Z
+                    	Last full scan source: 1
+                    	Product status: 0x00080000
+                   
+
+TimeCreated      : 4/8/2026 9:04:34 PM
+Id               : 1150
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client is up and running in a healthy state.
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Security intelligence version: 1.447.233.0
+                   
+
+TimeCreated      : 4/8/2026 8:04:34 PM
+Id               : 1151
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client health report (time in UTC):
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Network Realtime Inspection engine version: 1.1.26020.3
+                    	Antivirus security intelligence version: 1.447.233.0
+                    	Antispyware security intelligence version: 1.447.233.0
+                    	Network Realtime Inspection security intelligence version: 1.447.233.0
+                    	RTP state: Enabled
+                    	OA state: Enabled
+                    	IOAV state: Enabled
+                    	BM state: Enabled
+                    	Antivirus security intelligence age: 0
+                    	Antispyware security intelligence age: 0
+                    	Last quick scan age: 1
+                    	Last full scan age: 1312
+                    	Antivirus security intelligence creation time: 2026-04-08T09:59:39Z
+                    	Antispyware security intelligence creation time: 2026-04-08T09:59:39Z
+                    	Last quick scan start time: 2026-04-07T18:29:38Z
+                    	Last quick scan end time: 2026-04-07T18:32:11Z
+                    	Last quick scan source: 2
+                    	Last full scan start time: 2022-09-04T12:58:41Z
+                    	Last full scan end time: 2022-09-04T13:43:55Z
+                    	Last full scan source: 1
+                    	Product status: 0x00080000
+                   
+
+TimeCreated      : 4/8/2026 8:04:34 PM
+Id               : 1150
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client is up and running in a healthy state.
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Security intelligence version: 1.447.233.0
+                   
+
+TimeCreated      : 4/8/2026 7:04:34 PM
+Id               : 1151
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client health report (time in UTC):
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Network Realtime Inspection engine version: 1.1.26020.3
+                    	Antivirus security intelligence version: 1.447.233.0
+                    	Antispyware security intelligence version: 1.447.233.0
+                    	Network Realtime Inspection security intelligence version: 1.447.233.0
+                    	RTP state: Enabled
+                    	OA state: Enabled
+                    	IOAV state: Enabled
+                    	BM state: Enabled
+                    	Antivirus security intelligence age: 0
+                    	Antispyware security intelligence age: 0
+                    	Last quick scan age: 1
+                    	Last full scan age: 1312
+                    	Antivirus security intelligence creation time: 2026-04-08T09:59:39Z
+                    	Antispyware security intelligence creation time: 2026-04-08T09:59:39Z
+                    	Last quick scan start time: 2026-04-07T18:29:38Z
+                    	Last quick scan end time: 2026-04-07T18:32:11Z
+                    	Last quick scan source: 2
+                    	Last full scan start time: 2022-09-04T12:58:41Z
+                    	Last full scan end time: 2022-09-04T13:43:55Z
+                    	Last full scan source: 1
+                    	Product status: 0x00080000
+                   
+
+TimeCreated      : 4/8/2026 7:04:34 PM
+Id               : 1150
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client is up and running in a healthy state.
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Security intelligence version: 1.447.233.0
+                   
+
+TimeCreated      : 4/8/2026 6:48:58 PM
+Id               : 5007
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus Configuration has changed. If this is an unexpected event you should review the settings as this may be the result of malware.
+                    	Old value: HKLM\SOFTWARE\Microsoft\Windows Defender\UX Configuration\ToastOrSsoTrigger = 0x0
+                    	New value: HKLM\SOFTWARE\Microsoft\Windows Defender\UX Configuration\ToastOrSsoTrigger = 0x1
+
+TimeCreated      : 4/8/2026 3:49:40 PM
+Id               : 1151
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client health report (time in UTC):
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Network Realtime Inspection engine version: 1.1.26020.3
+                    	Antivirus security intelligence version: 1.447.233.0
+                    	Antispyware security intelligence version: 1.447.233.0
+                    	Network Realtime Inspection security intelligence version: 1.447.233.0
+                    	RTP state: Enabled
+                    	OA state: Enabled
+                    	IOAV state: Enabled
+                    	BM state: Enabled
+                    	Antivirus security intelligence age: 0
+                    	Antispyware security intelligence age: 0
+                    	Last quick scan age: 1
+                    	Last full scan age: 1312
+                    	Antivirus security intelligence creation time: 2026-04-08T09:59:39Z
+                    	Antispyware security intelligence creation time: 2026-04-08T09:59:39Z
+                    	Last quick scan start time: 2026-04-07T18:29:38Z
+                    	Last quick scan end time: 2026-04-07T18:32:11Z
+                    	Last quick scan source: 2
+                    	Last full scan start time: 2022-09-04T12:58:41Z
+                    	Last full scan end time: 2022-09-04T13:43:55Z
+                    	Last full scan source: 1
+                    	Product status: 0x00080000
+                   
+
+TimeCreated      : 4/8/2026 3:49:40 PM
+Id               : 1150
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client is up and running in a healthy state.
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Security intelligence version: 1.447.233.0
+                   
+
+TimeCreated      : 4/8/2026 2:49:40 PM
+Id               : 1151
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client health report (time in UTC):
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Network Realtime Inspection engine version: 1.1.26020.3
+                    	Antivirus security intelligence version: 1.447.233.0
+                    	Antispyware security intelligence version: 1.447.233.0
+                    	Network Realtime Inspection security intelligence version: 1.447.233.0
+                    	RTP state: Enabled
+                    	OA state: Enabled
+                    	IOAV state: Enabled
+                    	BM state: Enabled
+                    	Antivirus security intelligence age: 0
+                    	Antispyware security intelligence age: 0
+                    	Last quick scan age: 1
+                    	Last full scan age: 1312
+                    	Antivirus security intelligence creation time: 2026-04-08T09:59:39Z
+                    	Antispyware security intelligence creation time: 2026-04-08T09:59:39Z
+                    	Last quick scan start time: 2026-04-07T18:29:38Z
+                    	Last quick scan end time: 2026-04-07T18:32:11Z
+                    	Last quick scan source: 2
+                    	Last full scan start time: 2022-09-04T12:58:41Z
+                    	Last full scan end time: 2022-09-04T13:43:55Z
+                    	Last full scan source: 1
+                    	Product status: 0x00080000
+                   
+
+TimeCreated      : 4/8/2026 2:49:40 PM
+Id               : 1150
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client is up and running in a healthy state.
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Security intelligence version: 1.447.233.0
+                   
+
+TimeCreated      : 4/8/2026 1:49:40 PM
+Id               : 1151
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client health report (time in UTC):
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Network Realtime Inspection engine version: 1.1.26020.3
+                    	Antivirus security intelligence version: 1.447.233.0
+                    	Antispyware security intelligence version: 1.447.233.0
+                    	Network Realtime Inspection security intelligence version: 1.447.233.0
+                    	RTP state: Enabled
+                    	OA state: Enabled
+                    	IOAV state: Enabled
+                    	BM state: Enabled
+                    	Antivirus security intelligence age: 0
+                    	Antispyware security intelligence age: 0
+                    	Last quick scan age: 0
+                    	Last full scan age: 1312
+                    	Antivirus security intelligence creation time: 2026-04-08T09:59:39Z
+                    	Antispyware security intelligence creation time: 2026-04-08T09:59:39Z
+                    	Last quick scan start time: 2026-04-07T18:29:38Z
+                    	Last quick scan end time: 2026-04-07T18:32:11Z
+                    	Last quick scan source: 2
+                    	Last full scan start time: 2022-09-04T12:58:41Z
+                    	Last full scan end time: 2022-09-04T13:43:55Z
+                    	Last full scan source: 1
+                    	Product status: 0x00080000
+                   
+
+TimeCreated      : 4/8/2026 1:49:40 PM
+Id               : 1150
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client is up and running in a healthy state.
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Security intelligence version: 1.447.233.0
+                   
+
+TimeCreated      : 4/8/2026 12:49:41 PM
+Id               : 1151
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client health report (time in UTC):
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Network Realtime Inspection engine version: 1.1.26020.3
+                    	Antivirus security intelligence version: 1.447.233.0
+                    	Antispyware security intelligence version: 1.447.233.0
+                    	Network Realtime Inspection security intelligence version: 1.447.233.0
+                    	RTP state: Enabled
+                    	OA state: Enabled
+                    	IOAV state: Enabled
+                    	BM state: Enabled
+                    	Antivirus security intelligence age: 0
+                    	Antispyware security intelligence age: 0
+                    	Last quick scan age: 0
+                    	Last full scan age: 1312
+                    	Antivirus security intelligence creation time: 2026-04-08T09:59:39Z
+                    	Antispyware security intelligence creation time: 2026-04-08T09:59:39Z
+                    	Last quick scan start time: 2026-04-07T18:29:38Z
+                    	Last quick scan end time: 2026-04-07T18:32:11Z
+                    	Last quick scan source: 2
+                    	Last full scan start time: 2022-09-04T12:58:41Z
+                    	Last full scan end time: 2022-09-04T13:43:55Z
+                    	Last full scan source: 1
+                    	Product status: 0x00080000
+                   
+
+TimeCreated      : 4/8/2026 12:49:41 PM
+Id               : 1150
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client is up and running in a healthy state.
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Security intelligence version: 1.447.233.0
+                   
+
+TimeCreated      : 4/8/2026 12:04:38 PM
+Id               : 5007
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus Configuration has changed. If this is an unexpected event you should review the settings as this may be the result of malware.
+                    	Old value: HKLM\SOFTWARE\Microsoft\Windows Defender\CoreService\WdConfigHash = 0x7874ADA9
+                    	New value: HKLM\SOFTWARE\Microsoft\Windows Defender\CoreService\WdConfigHash = 0x13F5F6FD
+
+TimeCreated      : 4/8/2026 12:04:38 PM
+Id               : 2000
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus security intelligence version updated.
+                    	Current security intelligence Version: 1.447.233.0
+                    	Previous security intelligence Version: 1.447.216.0
+                    	Security intelligence Type: AntiSpyware
+                    	Update Type: Delta
+                    	User: NT AUTHORITY\SYSTEM
+                    	Current Engine Version: 1.1.26020.3
+                    	Previous Engine Version: 1.1.26020.3
+
+TimeCreated      : 4/8/2026 12:04:38 PM
+Id               : 2000
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus security intelligence version updated.
+                    	Current security intelligence Version: 1.447.233.0
+                    	Previous security intelligence Version: 1.447.216.0
+                    	Security intelligence Type: AntiVirus
+                    	Update Type: Delta
+                    	User: NT AUTHORITY\SYSTEM
+                    	Current Engine Version: 1.1.26020.3
+                    	Previous Engine Version: 1.1.26020.3
+
+TimeCreated      : 4/8/2026 12:00:37 PM
+Id               : 5007
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus Configuration has changed. If this is an unexpected event you should review the settings as this may be the result of malware.
+                    	Old value: HKLM\SOFTWARE\Microsoft\Windows Defender\UX Configuration\ToastOrSsoTrigger = 0x1
+                    	New value: HKLM\SOFTWARE\Microsoft\Windows Defender\UX Configuration\ToastOrSsoTrigger = 0x0
+
+TimeCreated      : 4/8/2026 2:40:37 AM
+Id               : 1013
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus has removed history of malware and other potentially unwanted software.
+                    	Time: 2026-03-24T06:40:37Z
+                    	User: NT AUTHORITY\SYSTEM
+                   
+
+TimeCreated      : 4/8/2026 2:40:37 AM
+Id               : 1002
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus scan has been stopped before completion.
+                    	Scan ID: {B356B72E-3083-408F-A743-904AD0E74204}
+                    	Scan Type: Antimalware
+                    	Scan Parameters: Quick Scan
+                     	User: NT AUTHORITY\SYSTEM
+                    	Stop Reason: Scheduled scan was skipped because the last successful scan was within the last 7 days
+
+TimeCreated      : 4/8/2026 2:40:37 AM
+Id               : 1000
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus scan has started.
+                    	Scan ID: {B356B72E-3083-408F-A743-904AD0E74204}
+                    	Scan Type: Antimalware
+                    	Scan Parameters: Quick Scan
+                    	Scan Resources: 
+                     	User: NT AUTHORITY\SYSTEM
+                    	Scan Trigger: Scheduled maintenance
+                    	Scan Only If Idle: Enabled
+                    	Low CPU Priority for Scans: Disabled
+                    	Thread Priority: 7
+
+TimeCreated      : 4/7/2026 11:29:53 PM
+Id               : 1151
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client health report (time in UTC):
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Network Realtime Inspection engine version: 1.1.26020.3
+                    	Antivirus security intelligence version: 1.447.216.0
+                    	Antispyware security intelligence version: 1.447.216.0
+                    	Network Realtime Inspection security intelligence version: 1.447.216.0
+                    	RTP state: Enabled
+                    	OA state: Enabled
+                    	IOAV state: Enabled
+                    	BM state: Enabled
+                    	Antivirus security intelligence age: 0
+                    	Antispyware security intelligence age: 0
+                    	Last quick scan age: 0
+                    	Last full scan age: 1311
+                    	Antivirus security intelligence creation time: 2026-04-07T09:27:01Z
+                    	Antispyware security intelligence creation time: 2026-04-07T09:27:01Z
+                    	Last quick scan start time: 2026-04-07T18:29:38Z
+                    	Last quick scan end time: 2026-04-07T18:32:11Z
+                    	Last quick scan source: 2
+                    	Last full scan start time: 2022-09-04T12:58:41Z
+                    	Last full scan end time: 2022-09-04T13:43:55Z
+                    	Last full scan source: 1
+                    	Product status: 0x00080000
+                   
+
+TimeCreated      : 4/7/2026 11:29:53 PM
+Id               : 1150
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client is up and running in a healthy state.
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Security intelligence version: 1.447.216.0
+                   
+
+TimeCreated      : 4/7/2026 10:29:53 PM
+Id               : 1151
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client health report (time in UTC):
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Network Realtime Inspection engine version: 1.1.26020.3
+                    	Antivirus security intelligence version: 1.447.216.0
+                    	Antispyware security intelligence version: 1.447.216.0
+                    	Network Realtime Inspection security intelligence version: 1.447.216.0
+                    	RTP state: Enabled
+                    	OA state: Enabled
+                    	IOAV state: Enabled
+                    	BM state: Enabled
+                    	Antivirus security intelligence age: 0
+                    	Antispyware security intelligence age: 0
+                    	Last quick scan age: 0
+                    	Last full scan age: 1311
+                    	Antivirus security intelligence creation time: 2026-04-07T09:27:01Z
+                    	Antispyware security intelligence creation time: 2026-04-07T09:27:01Z
+                    	Last quick scan start time: 2026-04-07T18:29:38Z
+                    	Last quick scan end time: 2026-04-07T18:32:11Z
+                    	Last quick scan source: 2
+                    	Last full scan start time: 2022-09-04T12:58:41Z
+                    	Last full scan end time: 2022-09-04T13:43:55Z
+                    	Last full scan source: 1
+                    	Product status: 0x00080000
+                   
+
+TimeCreated      : 4/7/2026 10:29:53 PM
+Id               : 1150
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client is up and running in a healthy state.
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Security intelligence version: 1.447.216.0
+                   
+
+TimeCreated      : 4/7/2026 9:39:37 PM
+Id               : 5007
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus Configuration has changed. If this is an unexpected event you should review the settings as this may be the result of malware.
+                    	Old value: HKLM\SOFTWARE\Microsoft\Windows Defender\UX Configuration\ToastOrSsoTrigger = 0x0
+                    	New value: HKLM\SOFTWARE\Microsoft\Windows Defender\UX Configuration\ToastOrSsoTrigger = 0x1
+
+TimeCreated      : 4/7/2026 6:55:38 PM
+Id               : 1151
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client health report (time in UTC):
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Network Realtime Inspection engine version: 1.1.26020.3
+                    	Antivirus security intelligence version: 1.447.216.0
+                    	Antispyware security intelligence version: 1.447.216.0
+                    	Network Realtime Inspection security intelligence version: 1.447.216.0
+                    	RTP state: Enabled
+                    	OA state: Enabled
+                    	IOAV state: Enabled
+                    	BM state: Enabled
+                    	Antivirus security intelligence age: 0
+                    	Antispyware security intelligence age: 0
+                    	Last quick scan age: 0
+                    	Last full scan age: 1311
+                    	Antivirus security intelligence creation time: 2026-04-07T09:27:01Z
+                    	Antispyware security intelligence creation time: 2026-04-07T09:27:01Z
+                    	Last quick scan start time: 2026-04-07T18:29:38Z
+                    	Last quick scan end time: 2026-04-07T18:32:11Z
+                    	Last quick scan source: 2
+                    	Last full scan start time: 2022-09-04T12:58:41Z
+                    	Last full scan end time: 2022-09-04T13:43:55Z
+                    	Last full scan source: 1
+                    	Product status: 0x00080000
+                   
+
+TimeCreated      : 4/7/2026 6:55:38 PM
+Id               : 1150
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client is up and running in a healthy state.
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Security intelligence version: 1.447.216.0
+                   
+
+TimeCreated      : 4/7/2026 5:31:25 PM
+Id               : 5007
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus Configuration has changed. If this is an unexpected event you should review the settings as this may be the result of malware.
+                    	Old value: HKLM\SOFTWARE\Microsoft\Windows Defender\UX Configuration\ToastOrSsoTrigger = 0x1
+                    	New value: HKLM\SOFTWARE\Microsoft\Windows Defender\UX Configuration\ToastOrSsoTrigger = 0x0
+
+TimeCreated      : 4/7/2026 4:27:16 PM
+Id               : 1151
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client health report (time in UTC):
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Network Realtime Inspection engine version: 1.1.26020.3
+                    	Antivirus security intelligence version: 1.447.216.0
+                    	Antispyware security intelligence version: 1.447.216.0
+                    	Network Realtime Inspection security intelligence version: 1.447.216.0
+                    	RTP state: Enabled
+                    	OA state: Enabled
+                    	IOAV state: Enabled
+                    	BM state: Enabled
+                    	Antivirus security intelligence age: 0
+                    	Antispyware security intelligence age: 0
+                    	Last quick scan age: 0
+                    	Last full scan age: 1311
+                    	Antivirus security intelligence creation time: 2026-04-07T09:27:01Z
+                    	Antispyware security intelligence creation time: 2026-04-07T09:27:01Z
+                    	Last quick scan start time: 2026-04-07T18:29:38Z
+                    	Last quick scan end time: 2026-04-07T18:32:11Z
+                    	Last quick scan source: 2
+                    	Last full scan start time: 2022-09-04T12:58:41Z
+                    	Last full scan end time: 2022-09-04T13:43:55Z
+                    	Last full scan source: 1
+                    	Product status: 0x00080000
+                   
+
+TimeCreated      : 4/7/2026 4:27:16 PM
+Id               : 1150
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client is up and running in a healthy state.
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Security intelligence version: 1.447.216.0
+                   
+
+TimeCreated      : 4/7/2026 4:23:00 PM
+Id               : 5007
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus Configuration has changed. If this is an unexpected event you should review the settings as this may be the result of malware.
+                    	Old value: HKLM\SOFTWARE\Microsoft\Windows Defender\UX Configuration\ToastOrSsoTrigger = 0x0
+                    	New value: HKLM\SOFTWARE\Microsoft\Windows Defender\UX Configuration\ToastOrSsoTrigger = 0x1
+
+TimeCreated      : 4/7/2026 4:04:18 PM
+Id               : 2010
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus used cloud protection to get additional security intelligence.
+                    	Current security intelligence Version: 1.447.216.0
+                    	Security intelligence Type: 
+                    	User: \
+                    	Current Engine Version: 1.1.26020.3
+                    	Cloud protection intelligence Type: Security intelligence update
+                    	Persistence Path: C:\ProgramData\Microsoft\Windows Defender\Scans\RtSigs\data\d88d4b9fa2d39a0d2938217b60e272197d9c420c
+                    	Cloud protection intelligence Version: 0.0.0.0
+                    	Cloud protection intelligence Compilation Timestamp: 4/7/2026 8:04:17 PM
+                    	Persistence Limit Type: Duration
+                    	Persistence Limit: 288000000
+
+TimeCreated      : 4/7/2026 3:18:39 PM
+Id               : 1151
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client health report (time in UTC):
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Network Realtime Inspection engine version: 1.1.26020.3
+                    	Antivirus security intelligence version: 1.447.216.0
+                    	Antispyware security intelligence version: 1.447.216.0
+                    	Network Realtime Inspection security intelligence version: 1.447.216.0
+                    	RTP state: Enabled
+                    	OA state: Enabled
+                    	IOAV state: Enabled
+                    	BM state: Enabled
+                    	Antivirus security intelligence age: 0
+                    	Antispyware security intelligence age: 0
+                    	Last quick scan age: 0
+                    	Last full scan age: 1311
+                    	Antivirus security intelligence creation time: 2026-04-07T09:27:01Z
+                    	Antispyware security intelligence creation time: 2026-04-07T09:27:01Z
+                    	Last quick scan start time: 2026-04-07T18:29:38Z
+                    	Last quick scan end time: 2026-04-07T18:32:11Z
+                    	Last quick scan source: 2
+                    	Last full scan start time: 2022-09-04T12:58:41Z
+                    	Last full scan end time: 2022-09-04T13:43:55Z
+                    	Last full scan source: 1
+                    	Product status: 0x00080000
+                   
+
+TimeCreated      : 4/7/2026 3:18:39 PM
+Id               : 1150
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Endpoint Protection client is up and running in a healthy state.
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26020.3
+                    	Security intelligence version: 1.447.216.0
+                   
+
+TimeCreated      : 4/7/2026 3:11:55 PM
+Id               : 5007
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus Configuration has changed. If this is an unexpected event you should review the settings as this may be the result of malware.
+                    	Old value: HKLM\SOFTWARE\Microsoft\Windows Defender\UX Configuration\ToastOrSsoTrigger = 0x1
+                    	New value: HKLM\SOFTWARE\Microsoft\Windows Defender\UX Configuration\ToastOrSsoTrigger = 0x0
+
+TimeCreated      : 4/7/2026 2:32:11 PM
+Id               : 1001
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus scan has finished.
+                    	Scan ID: {2D0F22C7-16F5-4237-97E9-029644614870}
+                    	Scan Type: Antimalware
+                    	Scan Parameters: Quick Scan
+                    	User: NT AUTHORITY\SYSTEM
+                    	Scan Time: 0:02:33
+
+TimeCreated      : 4/7/2026 2:29:38 PM
+Id               : 1000
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus scan has started.
+                    	Scan ID: {2D0F22C7-16F5-4237-97E9-029644614870}
+                    	Scan Type: Antimalware
+                    	Scan Parameters: Quick Scan
+                    	Scan Resources: 
+                     	User: NT AUTHORITY\SYSTEM
+                    	Scan Trigger: Scheduled maintenance
+                    	Scan Only If Idle: Enabled
+                    	Low CPU Priority for Scans: Disabled
+                    	Thread Priority: 7
+
+TimeCreated      : 4/7/2026 2:25:34 PM
+Id               : 1002
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus scan has been stopped before completion.
+                    	Scan ID: {8E008E18-AC51-4236-B1B5-0DB712A77B7C}
+                    	Scan Type: Antimalware
+                    	Scan Parameters: Quick Scan
+                     	User: NT AUTHORITY\SYSTEM
+                    	Stop Reason: RPC connection rundown
+
+TimeCreated      : 4/7/2026 2:24:35 PM
+Id               : 1000
+LevelDisplayName : Information
+ProviderName     : Microsoft-Windows-Windows Defender
+Message          : Microsoft Defender Antivirus scan has started.
+                    	Scan ID: {8E008E18-AC51-4236-B1B5-0DB712A77B7C}
+                    	Scan Type: Antimalware
+                    	Scan Parameters: Quick Scan
+                    	Scan Resources: 
+                     	User: NT AUTHORITY\SYSTEM
+                    	Scan Trigger: Scheduled maintenance
+                    	Scan Only If Idle: Enabled
+                    	Low CPU Priority for Scans: Disabled
+                    	Thread Priority: 7
+
+
+
+

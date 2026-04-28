@@ -1,0 +1,14 @@
+﻿
+
+TimeCreated      : 4/9/2026 11:35:09 PM
+Id               : 1150
+LevelDisplayName : Information
+Message          : Endpoint Protection client is up and running in a healthy state.
+                    	Platform version: 4.18.26020.6
+                    	Engine version: 1.1.26030.3008
+                    	Security intelligence version: 1.449.16.0
+                   
+
+
+
+

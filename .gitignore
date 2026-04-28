@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Environment files
+.env
+*.env.local
+
+# AI artifacts
+splunk-cowrie-ai/models/
+splunk-cowrie-ai/results/
+splunk-cowrie-ai/data/*.jsonl
+
+# Editor / OS
+.DS_Store
+Thumbs.db

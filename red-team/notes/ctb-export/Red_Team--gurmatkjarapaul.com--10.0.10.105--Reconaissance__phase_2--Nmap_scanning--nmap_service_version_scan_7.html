@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>nmap service version scan</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>nmap service version scan</h1><br/><p>root@arcy:/home/arcy# nmap -Pn -sV -sC -p 80,2222 10.0.10.105</p><p>Starting Nmap 7.94SVN ( <a href="https://nmap.org">https://nmap.org</a> ) at 2026-04-08 12:46 EDT</p><p>Nmap scan report for gurmatkjarapaul.com (10.0.10.105)</p><p>Host is up (0.00021s latency).</p><p></p><p>PORT     STATE SERVICE VERSION</p><p>80/tcp   open  http    Apache httpd 2.4.58 ((Ubuntu))</p><p>| http-title: Modern Bank | Secure Sign In</p><p>|_Requested resource was /login.php</p><p>|_http-server-header: Apache/2.4.58 (Ubuntu)</p><p>| http-cookie-flags: </p><p>|   /: </p><p>|     PHPSESSID: </p><p>|_      httponly flag not set</p><p>2222/tcp open  ssh     OpenSSH 9.2p1 Debian 2+deb12u3 (protocol 2.0)</p><p>| ssh-hostkey: </p><p>|   2048 a0:1e:25:47:12:e2:77:c4:10:77:89:ec:63:a8:a0:6b (RSA)</p><p>|   256 e1:93:09:97:e9:6b:82:ec:92:2f:de:22:fa:f2:5e:7b (ECDSA)</p><p>|_  256 c2:bc:9d:45:29:f3:8a:9c:33:54:5d:5e:1f:b0:07:5c (ED25519)</p><p>MAC Address: 52:54:00:4F:96:82 (QEMU virtual NIC)</p><p>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel</p><p></p><p>Service detection performed. Please report any incorrect results at <a href="https://nmap.org/submit/">https://nmap.org/submit/</a> .</p><p>Nmap done: 1 IP address (1 host up) scanned in 11.31 seconds</p></div>
+</body>
+</html>

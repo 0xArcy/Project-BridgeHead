@@ -1,0 +1,24 @@
+﻿
+
+ThreatName                     : 
+InitialDetectionTime           : 11/6/2025 9:38:26 AM
+RemediationTime                : 11/18/2025 9:21:02 AM
+Resources                      : {file:_C:\Users\Admin\Downloads\PowerISO9-x64.
+                                 exe, webfile:_C:\Users\Admin\Downloads\PowerIS
+                                 O9-x64.exe|https://www.poweriso.net/PowerISO9-
+                                 x64.exe|pid:18812,ProcessStart:134069135048979
+                                 025}
+ActionSuccess                  : True
+CurrentThreatExecutionStatusID : 1
+
+ThreatName                     : 
+InitialDetectionTime           : 1/21/2026 11:02:09 PM
+RemediationTime                : 1/22/2026 10:12:55 PM
+Resources                      : {file:_C:\Users\Admin\Downloads\PowerISO9-x64.
+                                 exe}
+ActionSuccess                  : True
+CurrentThreatExecutionStatusID : 1
+
+
+
+

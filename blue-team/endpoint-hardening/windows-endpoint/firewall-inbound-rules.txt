@@ -1,0 +1,9 @@
+﻿
+DisplayName                             Enabled Profile Direction Action
+-----------                             ------- ------- --------- ------
+Remote Event Log Management (NP-In)       False  Domain   Inbound  Allow
+Wi-Fi Direct Spooler Use (In)              True  Public   Inbound  Allow
+Remote Scheduled Tasks Management (RPC)   False  Domain   Inbound  Allow
+
+
+

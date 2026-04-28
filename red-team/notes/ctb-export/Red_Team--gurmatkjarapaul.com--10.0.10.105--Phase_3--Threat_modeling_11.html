@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Threat modeling</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Threat modeling</h1><br/><p></p><p><h3>Phase 3: Threat Modeling</h3></p><p>In the real world, this is where you sit down and figure out the easiest way to break in based on what you found in Reconnaissance.</p><p><strong>What to do:</strong> You don&#39;t need to run any tools here. You just look at your Nmap results and make a plan. You see a web server (Port 80) and an SSH portal (Port 2222). You know from the RoE that brute-forcing SSH is forbidden, so the web server is your primary attack vector.</p><p><strong>What to Document (The &quot;Threat Modeling&quot; Section):</strong> Add this brief section to your report:<ol><li><strong>Primary Vector:</strong> &quot;The primary attack surface was identified as the Modern Bank web application hosted on Port 80. As a custom web application, it holds the highest probability for logic flaws and injection vulnerabilities.&quot;</li></ol></p><p><ol><li><strong>Secondary Vector:</strong> &quot;The SSH service on Port 2222 (identified as a potential honeypot/management port) was noted as a secondary vector, though strict RoE limitations prohibit automated credential brute-forcing.&quot;</li></ol></p><p></p></div>
+</body>
+</html>

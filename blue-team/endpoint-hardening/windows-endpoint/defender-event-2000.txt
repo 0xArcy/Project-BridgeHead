@@ -1,0 +1,17 @@
+﻿
+
+TimeCreated      : 4/10/2026 10:01:35 PM
+Id               : 2000
+LevelDisplayName : Information
+Message          : Microsoft Defender Antivirus security intelligence version updated.
+                    	Current security intelligence Version: 1.449.34.0
+                    	Previous security intelligence Version: 1.449.16.0
+                    	Security intelligence Type: AntiSpyware
+                    	Update Type: Delta
+                    	User: NT AUTHORITY\SYSTEM
+                    	Current Engine Version: 1.1.26030.3008
+                    	Previous Engine Version: 1.1.26030.3008
+
+
+
+

@@ -1,0 +1,17 @@
+# Environments
+.env
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+
+# Model Checkpoints & Output
+results/
+models/
+
+# Data / Logs
+data/*.json
+*.log

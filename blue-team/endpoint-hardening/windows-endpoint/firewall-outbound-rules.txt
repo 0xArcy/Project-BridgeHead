@@ -1,0 +1,9 @@
+﻿
+DisplayName                    Enabled Profile Direction Action
+-----------                    ------- ------- --------- ------
+Wi-Fi Direct Spooler Use (Out)    True  Public  Outbound  Allow
+Network Discovery (UPnP-Out)     False  Public  Outbound  Allow
+Remote Assistance (TCP-Out)      False  Public  Outbound  Allow
+
+
+

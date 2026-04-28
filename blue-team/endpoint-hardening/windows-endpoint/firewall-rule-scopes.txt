@@ -1,0 +1,9 @@
+﻿
+Rule                                                        Profiles                Enabled            Direction                 Action              RemoteAddress    
+----                                                        --------                -------            ---------                 ------              -------------    
+Core Networking Diagnostics - ICMP Echo Request (ICMPv4-In) Domain, Private, Public False, False       Inbound, Inbound          Allow, Allow        Any, LocalSubnet4
+Network Discovery (NB-Name-In)                              Public, Private, Domain False, True, False Inbound, Inbound, Inbound Allow, Allow, Allow LocalSubnet, Any 
+Windows Remote Management (HTTP-In)                         Public, Domain, Private False, False       Inbound, Inbound          Allow, Allow        Any, LocalSubnet 
+
+
+
