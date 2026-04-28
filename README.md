@@ -74,6 +74,16 @@ Curated screenshots from exploitation and post-exploitation context:
 - `exposed-sensitive-information.png`
 - `frontend-proxy-service-token.png`
 
+### `red-team/evidence/attack-chain/`
+
+Attack-path screenshots used directly in the main report:
+
+- `system-2-shell-to-meterpreter.png`
+- `system-2-ssh-deploy-post-exploitation.png`
+- `system-3-icecast-searchsploit.png`
+- `system-3-icecast-metasploit-module-search.png`
+- `system-3-post-exploitation-artifacts.png`
+
 ### `red-team/notes/ctb-export/`
 
 Raw CherryTree export of the operation notebook.
@@ -89,10 +99,7 @@ Contains:
 
 Main report set (markdown only, no duplicate PDF copies):
 
-- `executive-report.md`
 - `pentest-report.md`
-- `rules-of-engagement.md`
-- `owasp-report.md`
 - `technical-appendix.md`
 
 ## Blue Team Folder (Defense + Monitoring + AI)

@@ -1,73 +1,69 @@
-# Architecture (Secure Runtime)
+# Project BridgeHead Architecture
+
+## Overview
+
+Project BridgeHead is a segmented enterprise lab built on Virt-Manager and centered around a DMZ, an internal network, and a routed perimeter enforced by pfSense. The environment supports both red-team operations and blue-team monitoring, with Cowrie, Splunk, Wazuh, and a custom DistilBERT-based classifier integrated into the workflow.
+
+## Network Segments
+
+| Segment | Purpose | Systems |
+|---|---|---|
+| DMZ | Internet-exposed and semi-exposed services | `10.0.10.104`, `10.0.10.105`, `10.0.10.106` |
+| Internal Network | Monitoring, management, and internal services | `10.0.20.101`, `10.0.20.103` |
+| Perimeter | Routing and segmentation | pfSense connected to WAN, DMZ, and Internal Network |
 
 ## Node Layout
 
-| Tier | Role | IP | Runtime |
+| Zone | Host | IP | Role |
 |---|---|---|---|
-| Frontend | TLS edge + JS web app | `10.0.10.105` | Nginx (godproxy-style reverse TLS) |
-| Backend | Secure API | `10.0.10.102` | Node.js HTTPS API (`8443`) |
-| Database | Persistent storage | `10.0.10.106` | MongoDB 7 (`requireTLS`, auth enabled) |
+| DMZ | Ubuntu 24.04 | `10.0.10.105` | Cowrie, HTTP website frontend, SSH, Splunk forwarder, Wazuh agent |
+| DMZ | Windows 10 jump server | `10.0.10.106` | Jump box, AI DistilBERT host, Splunk forwarder, Wazuh agent, website database services |
+| DMZ | Ubuntu Server | `10.0.10.104` | Backend server for the website |
+| Internal | Ubuntu Server | `10.0.20.101` | Splunk Enterprise, Wazuh manager, `vsftpd 2.3.2` |
+| Internal | Windows Server | `10.0.20.103` | Wazuh agent, Splunk forwarder |
+| Perimeter | pfSense | N/A | WAN edge, DMZ/Internal routing, network control point |
 
-## Data Flow
+## Logical Flow
 
-1. Browser connects to frontend over HTTPS (`443`).
-2. Frontend serves static JS app from `frontend/app`.
-3. API requests from browser hit `/api/*` on frontend.
-4. Nginx reverse proxy forwards `/api/*` to backend over HTTPS (`10.0.10.102:8443`).
-5. Proxy injects `X-Internal-Token` for service authentication.
-6. Backend validates token, then validates user JWT for protected routes.
-7. Backend writes tokenized values to MongoDB over TLS.
+1. WAN-facing traffic reaches pfSense first.
+2. pfSense routes allowed traffic into the DMZ.
+3. The frontend host at `10.0.10.105` handles web traffic and also exposes monitored SSH/Cowrie activity.
+4. Website backend processing is handled by `10.0.10.104`.
+5. The Windows 10 jump server at `10.0.10.106` supports administration and hosts the AI classification workflow tied to Splunk.
+6. Internal telemetry is centralized through `10.0.20.101`, which runs Splunk Enterprise and Wazuh Manager.
+7. Additional Windows internal telemetry is forwarded from `10.0.20.103`.
 
-## Security Controls
+## Security Monitoring Stack
 
-### Edge
+### DMZ Collection
 
-- Redirect HTTP to HTTPS.
-- TLS 1.2+ only.
-- HSTS and response hardening headers.
+- Cowrie honeypot activity is generated on `10.0.10.105`.
+- Splunk forwarders are deployed on DMZ systems.
+- Wazuh agents are deployed on the Ubuntu 24.04 frontend and the Windows 10 jump server.
 
-### Service-to-Service
+### Internal Monitoring
 
-- Internal API token required for backend route access.
-- Backend is intended to be reachable only from frontend node via firewall policy.
+- `10.0.20.101` is the main monitoring node.
+- Splunk Enterprise centralizes collected logs.
+- Wazuh Manager aggregates host-based telemetry and alerts.
 
-### User Authentication
+### AI Integration
 
-- JWT bearer tokens issued by `/api/auth/login`.
-- Protected endpoints require valid bearer token.
+- DistilBERT-based attacker-behavior classification is hosted on `10.0.10.106`.
+- The AI pipeline enriches Cowrie/Splunk events to help distinguish recon activity, malware-dropping behavior, and human-interactive sessions.
 
-### Database
+## Operational Purpose
 
-- `security.authorization: enabled`
-- `net.tls.mode: requireTLS`
-- App writes tokenized sensitive values before persistence.
+This architecture supports the full BridgeHead workflow:
 
-## Ports
+- attack simulation from exposed services in the DMZ
+- defensive logging and alerting across DMZ and internal hosts
+- investigation through Splunk and Wazuh
+- AI-assisted classification of Cowrie honeypot interactions
+- validation of segmentation between exposed and internal assets
 
-| Source | Destination | Port | Protocol | Purpose |
-|---|---|---|---|---|
-| User | Frontend | 443 | HTTPS | UI and API entrypoint |
-| User | Frontend | 80 | HTTP | Redirect-only |
-| Frontend | Backend | 8443 | HTTPS | Reverse-proxied API |
-| Backend | Database | 27017 | MongoDB TLS | Data access |
+## Notes
 
-## Deployment Scripts
-
-- Frontend: `frontend/setup_frontend.sh`
-- Backend: `backend/setup_backend.sh`
-- Database: `database/setup_mongodb_secure.sh`
-
-## Legacy Components
-
-Legacy PHP and legacy MSSQL/CTF assets remain in-repo for reference and historical context.
-They are not part of the active secure deployment path.
-
-## Operational Validation
-
-Use:
-
-```bash
-bash verify_deployment.sh 10.0.10.105 10.0.10.102 10.0.10.106 "<shared_token_optional>"
-```
-
-This verifies encrypted transport, JWT login path, tokenization endpoint behavior, and cross-tier connectivity.
+- The uploaded architecture diagram is treated as the current source of truth for host placement and roles.
+- `10.0.10.106` serves multiple functions in the current lab, including jump-host operations and AI-assisted monitoring support.
+- `10.0.20.101` is a high-value internal node because it combines monitoring and additional service exposure (`vsftpd 2.3.2`).
