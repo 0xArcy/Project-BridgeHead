@@ -42,13 +42,7 @@ If you are opening this repository for the first time:
 ### `setup/architecture/`
 
 - `ARCHITECTURE.md`
-- `diagrams/network-topology-overview.png`
-- `diagrams/network-design-draft-1.png`
-- `diagrams/network-design-draft-2.png`
-- `diagrams/network-design-draft-3.png`
-- `diagrams/whiteboard-snapshot-1.jpeg`
-- `diagrams/whiteboard-snapshot-2.jpeg`
-- `diagrams/whiteboard-snapshot-3.jpeg`
+- `Architecture.pdf`
 
 ### `setup/target-environment/`
 
