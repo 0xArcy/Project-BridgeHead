@@ -54,15 +54,6 @@ This contains the vulnerable app analysis and migration docs:
 - `FILE_UPLOAD_REMEDIATION_OWASP_CVE.md`
 - `BRAND_PACK.md`
 
-### `setup/governance/`
-
-Governance/assurance writeups:
-
-- `cobit-2019-governance-assignment.md`
-- `it-security-governance-assignment.md`
-- `endpoint-auditing-assignment.md`
-- `third-party-risk-assessment-assignment.md`
-
 ## Red Team Folder (Attack, Recon, Pentest, Nessus)
 
 `red-team/` contains offensive testing data and final offensive reporting.
