@@ -1,10 +1,10 @@
 # Project Bridgehead Post-Incident and Architectural Defense Report
 
-Prepared for the Project Bridgehead capstone environment and repository as a consolidated post-incident record, technical assessment, and architectural defense report.
+Project Bridgehead was our final project for the Information & Network Security course. Instead of doing a standard Packet Tracer style simulation, we decided to build the environment ourselves on a mini PC using Virt-Manager and KVM/QEMU. The result was a six-VM enterprise-style lab with separate roles across the edge, exposed services, internal systems, monitoring infrastructure, attacker operations, and Windows-hosted assets.
 
-All raw attack reports, scan PDFs, exported logs, screenshots, custom scripts, and extracted CherryTree HTML exports referenced in this report are preserved in the project repository or in the current workspace snapshot. Where an artifact exists only as an image, the report treats it as screenshot-based evidence. Where an artifact exists as raw text, CSV, Markdown, or extracted HTML, the report treats it as primary evidence and correlates it with matching screenshots where available.
+We then used that environment from both sides. On the offensive side, we simulated a breach against the banking-themed target environment by chaining a vulnerable file upload into remote code execution on the web tier, extracting exposed credentials, and pivoting deeper into the internal network. That gave us a realistic attack path to document rather than a one-box exploit with no broader context.
 
-Evidence handling note: the separate archive `1/4/hacker.ctb_HTML.7z` was later materialized in the workspace, extracted, and reviewed. That extracted HTML export materially strengthened the evidentiary basis for this report by preserving rendered note pages, embedded images, and raw Cowrie or Splunk event text that was only partially visible in the original note-tree structure.
+The defensive side is what turned the project into something bigger than a basic attack demo. We deployed controls and telemetry sources including pfSense, Suricata, Splunk, Wazuh, and a Cowrie honeypot, then used the collected data to investigate the activity after the fact. On top of that, we integrated an AI-assisted analysis pipeline based on DistilBERT to classify attacker behavior from the Cowrie and Splunk telemetry. This report ties those parts together by documenting how the environment was built, how the attack unfolded, what evidence was collected, and how the defensive and AI components were used to analyze the compromise.
 
 ---
 
@@ -16,6 +16,46 @@ Evidence handling note: the separate archive `1/4/hacker.ctb_HTML.7z` was later 
 4. [Closing Assessment](#closing-assessment)
 
 ---
+
+## List of Tables
+
+| Table | Title | Location |
+| --- | --- | --- |
+| Table 1 | Network zones, purposes, and key assets across the Project Bridgehead architecture | Section 1.4 |
+| Table 2 | Detailed tool matrix for the full infrastructure, red-team, blue-team, and AI stack | Section 1.13 |
+| Table 3 | Structured kill-chain summary across reconnaissance, exploitation, pivoting, and internal compromise | Section 2.2 |
+| Table 4 | Consolidated red-team findings matrix with severity, framework lens, and evidence basis | Section 2.10 |
+
+## List of Figures
+
+| Figure | Title | Location |
+| --- | --- | --- |
+| Figure 1 | High-level Project Bridgehead network topology | Section 1.4 |
+| Figure 2 | Functional host-role view of Project Bridgehead | Section 1.5 |
+| Figure 3 | Early SSH interaction with the Cowrie deception endpoint | Section 2.3 |
+| Figure 4 | First SQL injection test capture against the login surface | Section 2.4 |
+| Figure 5 | Second SQL injection test capture from the same attack-path branch | Section 2.4 |
+| Figure 6 | Directory traversal attempt returning `404 Not Found` | Section 2.4 |
+| Figure 7 | Upload-stage screenshot showing the malicious avatar submission | Section 2.5 |
+| Figure 8 | Caido replay proving command execution through the uploaded shell | Section 2.6 |
+| Figure 9 | Caido replay enumerating the compromised web root | Section 2.6 |
+| Figure 10 | Caido replay retrieving the embedded challenge documentation | Section 2.6 |
+| Figure 11 | Caido replay demonstrating privileged file-read attempts through the shell | Section 2.6 |
+| Figure 12 | Caido replay extracting `/etc/passwd` from the compromised host | Section 2.6 |
+| Figure 13 | Caido replay retrieving `credentials.txt` for lateral movement | Section 2.6 |
+| Figure 14 | Backend SSH access using the stolen `deploy` credential | Section 2.7 |
+| Figure 15 | Post-SSH privilege-escalation workflow on System 2 | Section 2.8 |
+| Figure 16 | Additional System 2 post-exploitation evidence from the `deploy` foothold | Section 2.8 |
+| Figure 17 | Shell-to-meterpreter upgrade on the backend host | Section 2.8 |
+| Figure 18 | Windows-host reconnaissance screenshot from the note-tree branch | Section 2.9 |
+| Figure 19 | Follow-on reconnaissance narrowing attention toward Icecast | Section 2.9 |
+| Figure 20 | `searchsploit icecast` output confirming known exploit history | Section 2.9 |
+| Figure 21 | Metasploit module search for `exploit/windows/http/icecast_header` | Section 2.9 |
+| Figure 22 | Post-exploitation evidence from System 3 after Icecast compromise | Section 2.9 |
+| Figure 23 | Splunk monitoring view demonstrating centralized SIEM visibility | Section 3.3 |
+| Figure 24 | Splunk view of Cowrie command telemetry after AI enrichment | Section 3.4 |
+| Figure 25 | Splunk statistics over Windows Security Event ID 4625 | Section 3.7 |
+| Figure 26 | AI-enriched Cowrie telemetry in Splunk | Section 3.8 |
 
 ## SECTION 1: INFRASTRUCTURE & SETUP
 
@@ -54,6 +94,8 @@ From a reporting standpoint, that means:
 
 The architecture evidence establishes three major network zones:
 
+Table 1: Network zones, purposes, and key assets across the Project Bridgehead architecture.
+
 | Zone | Purpose | Network | Key Assets |
 | --- | --- | --- | --- |
 | WAN edge | External entry and routing boundary | external-facing | pfSense WAN interface |
@@ -61,6 +103,10 @@ The architecture evidence establishes three major network zones:
 | Internal / SOC network | Monitoring, management, and log aggregation | `10.0.20.x` | `10.0.20.101`, `10.0.20.103` |
 
 This was not a flat lab. The perimeter was enforced by pfSense, which acted as the master gatekeeper between WAN-facing exposure, the DMZ, and the internal security segment. That routing and firewall layer is one of the most important missing details in the earlier high-level summary, because without it the environment looks like a handful of compromised VMs rather than a segmented network-security design.
+
+![Project Bridgehead network topology showing the WAN edge, pfSense, DMZ hosts, and internal monitoring segment.](./Architecture_page-0001.jpg)
+
+*Figure 1: High-level Project Bridgehead network topology, showing pfSense separating the WAN, the DMZ, and the internal monitoring network while preserving the host placements used throughout the attack and defense narrative.*
 
 The DMZ housed the assets intended to be attacked, monitored, or used as stepping stones. The internal network housed centralized monitoring and additional Windows telemetry. This setup made it possible to test not only exploitation, but also questions of segmentation quality:
 
@@ -74,6 +120,10 @@ Those are enterprise questions, not merely CTF questions, and the pfSense-center
 ### 1.5 Host Inventory and Functional Roles
 
 The current architecture material and the offensive evidence together support the following working host map.
+
+![Project Bridgehead host-role diagram showing frontend, Cowrie, Splunk forwarding, Wazuh, backend, internal Splunk, and AI placement across the lab.](./Architecture_page-0002.jpg)
+
+*Figure 2: Functional host-role view of Project Bridgehead, mapping the frontend web tier, Cowrie deception service, backend server, internal Splunk and Wazuh roles, and the Windows jump-server placement referenced later in the report.*
 
 #### DMZ Hosts
 
@@ -156,7 +206,7 @@ This is especially relevant in a lab where the decisive exploit was an applicati
 
 ### 1.8 Offensive Tooling Present in the Setup
 
-The red-team environment was not limited to Metasploit. The pentest report and technical appendix show a broader offensive workflow that should be documented as part of the setup because tool availability shapes the attack methodology.
+The offensive side of the lab used a fairly standard workflow. It was not just Metasploit and a few screenshots after the fact. The notes and appendix show the usual progression: scan first, test web behavior, validate an exploit path, then stabilize access once a foothold is real.
 
 #### Attacker Platform
 
@@ -181,11 +231,11 @@ The red-team environment was not limited to Metasploit. The pentest report and t
 - Meterpreter
 - shell-to-meterpreter session upgrade workflow
 
-This toolchain matters because it demonstrates that the lab was exercised across the full kill chain: discovery, application review, exploitation, credential abuse, lateral movement, and post-exploitation validation.
+Taken together, these tools show that the exercise covered the whole path from recon to post-exploitation, not just a single exploit demo.
 
 ### 1.9 Blue-Team and Telemetry Pipeline Present in the Setup
 
-The blue-team side of the setup was equally substantial and should be documented as infrastructure rather than an afterthought. The evidence across the architecture document, Splunk material, and AI integration shows a defense stack with several layers.
+The defensive side was built out with the same level of intent. It was not something added at the end just to collect a few logs. The architecture, Splunk evidence, and AI workflow all point to a layered monitoring setup that was part of the environment from the start.
 
 #### Deception and Host Telemetry
 
@@ -207,7 +257,7 @@ The blue-team side of the setup was equally substantial and should be documented
 - Nessus used for host-level audit evidence
 - host firewalling and Windows endpoint telemetry used as part of the hardening story
 
-The engineering point is that the lab did not only prove exploitation. It also proved that logs, deception events, and classification outputs could be centralized and reviewed from a segregated internal location.
+What matters here is that the lab did more than prove the attack path. It also showed that logs, honeypot events, and AI-enriched results could all be pulled into one internal monitoring space and reviewed together.
 
 ### 1.10 AI Integration as a First-Class Architectural Component
 
@@ -265,11 +315,13 @@ Even in the setup section, the environment already shows the engineering conditi
 - exposed credentials remain usable across tiers, showing that identity material is over-trusted,
 - logging and detection can exist without keeping pace with exploitation.
 
-This is one of the reasons the lab reads as a serious capstone rather than a simple exploit demo: the infrastructure itself is designed to expose how application flaws, secrets hygiene, firewall policy, service exposure, and detection maturity interact as one system.
+This is one of the reasons the lab reads as a serious security project rather than a simple exploit demo: the infrastructure itself is designed to expose how application flaws, secrets hygiene, firewall policy, service exposure, and detection maturity interact as one system.
 
 ### 1.13 Detailed Tool Matrix
 
 To make the setup explicit and technically concrete, the following matrix consolidates the evidence-backed tool stack referenced across the pentest report, technical appendix, architecture notes, and monitoring artifacts.
+
+Table 2: Detailed tool matrix for the full infrastructure, red-team, blue-team, and AI stack.
 
 | Layer | Tool or Platform | Role in the Environment |
 | --- | --- | --- |
@@ -306,7 +358,7 @@ This report is intentionally written as a long-form technical narrative rather t
 - Section 3 focuses on defensive visibility, monitoring, AI, and hardening response.
 - Later severity references and standards mappings are added only where they improve technical interpretation rather than as cosmetic labels.
 
-That approach keeps the report readable while still preserving the depth expected of a capstone that is meant to stand up as a serious engineering document.
+That approach keeps the report readable while still preserving the depth expected of a serious engineering document.
 
 ---
 
@@ -325,6 +377,8 @@ This distinction is what prevents the report from becoming sensationalized. The 
 ### 2.2 Structured Kill-Chain Summary
 
 The observed attack chain unfolded across three systems and several distinct decision points.
+
+Table 3: Structured kill-chain summary across reconnaissance, exploitation, pivoting, and internal compromise.
 
 | Kill-Chain Phase | Target | Attacker Action | Decision Point | Principal Security Meaning |
 | --- | --- | --- | --- | --- |
@@ -366,7 +420,7 @@ After identifying TCP/2222 during the initial Nmap phase, the operator also inte
 
 ![Honeypot interaction on the Cowrie service exposed on port 2222.](./red-team/notes/ctb-export/images/22-1.png)
 
-*Figure 8: Early SSH interaction with the Cowrie service on TCP/2222 after Nmap discovery, showing command execution attempts such as `whoami` and `cat /etc/shadow` against the deception endpoint on System 1.*
+*Figure 3: Early SSH interaction with the Cowrie service on TCP/2222 after Nmap discovery, showing command execution attempts such as `whoami` and `cat /etc/shadow` against the deception endpoint on System 1.*
 
 ### 2.4 Phase Two: Attack-Path Triage on the Web Tier
 
@@ -387,15 +441,15 @@ The decision here was to abandon ambiguous or non-productive paths and commit ef
 
 ![Manual SQL injection testing against the login workflow, screenshot one.](./red-team/notes/ctb-export/images/19-1.png)
 
-*Figure 9: First SQL injection test capture against the login surface, preserved as evidence of manual path exploration rather than a confirmed exploit result.*
+*Figure 4: First SQL injection test capture against the login surface, preserved as evidence of manual path exploration rather than a confirmed exploit result.*
 
 ![Manual SQL injection testing against the login workflow, screenshot two.](./red-team/notes/ctb-export/images/19-2.png)
 
-*Figure 10: Second SQL injection test capture from the same branch, showing the assessment's evidence discipline in recording explored but non-decisive attack paths.*
+*Figure 5: Second SQL injection test capture from the same branch, showing the assessment's evidence discipline in recording explored but non-decisive attack paths.*
 
 ![Directory traversal attempt against the public web application.](./red-team/notes/ctb-export/images/20-1.png)
 
-*Figure 11: Directory traversal attempt resulting in a `404 Not Found`, useful because it narrows the report to the actual exploit chain instead of overstating every tested vector.*
+*Figure 6: Directory traversal attempt resulting in a `404 Not Found`, useful because it narrows the report to the actual exploit chain instead of overstating every tested vector.*
 
 ### 2.5 Phase Three: Initial Access Through Insecure File Upload
 
@@ -417,7 +471,7 @@ Once the upload path executed, the attacker no longer needed speculative testing
 
 ![Upload-step evidence showing the malicious avatar payload being submitted.](./red-team/notes/ctb-export/images/27-1.png)
 
-*Figure 12: Upload-stage screenshot showing the malicious avatar submission that initiated the insecure file upload exploit chain.*
+*Figure 7: Upload-stage screenshot showing the malicious avatar submission that initiated the insecure file upload exploit chain.*
 
 ### 2.6 Phase Four: Command Execution, Local File Access, and Secret Harvesting
 
@@ -439,27 +493,27 @@ At this point the attacker chose the lowest-noise, highest-confidence pivot: use
 
 ![Caido replay showing command execution via `whoami` against the uploaded PHP shell.](./red-team/notes/ctb-export/images/28-1.png)
 
-*Figure 13: Caido replay proving the uploaded avatar became an execution path by returning `www-data` from a `whoami` command issued through the web shell.*
+*Figure 8: Caido replay proving the uploaded avatar became an execution path by returning `www-data` from a `whoami` command issued through the web shell.*
 
 ![Caido replay listing the compromised web root through the uploaded shell.](./red-team/notes/ctb-export/images/28-2.png)
 
-*Figure 14: Caido replay used to enumerate the application directory and confirm the presence of sensitive files such as `.env`, `credentials.txt`, and the legacy PHP application source.*
+*Figure 9: Caido replay used to enumerate the application directory and confirm the presence of sensitive files such as `.env`, `credentials.txt`, and the legacy PHP application source.*
 
 ![Caido replay reading the CTF documentation from the compromised web root.](./red-team/notes/ctb-export/images/28-3.png)
 
-*Figure 15: Caido replay retrieving the embedded challenge documentation, which itself describes the insecure upload path and downstream credential exposure, reinforcing the lab's intentionally vulnerable design.*
+*Figure 10: Caido replay retrieving the embedded challenge documentation, which itself describes the insecure upload path and downstream credential exposure, reinforcing the lab's intentionally vulnerable design.*
 
 ![Caido replay attempting to read `/etc/shadow` via path traversal from the uploaded shell.](./red-team/notes/ctb-export/images/28-5.png)
 
-*Figure 16: Caido replay demonstrating privileged file-read attempts through the web shell; even where a specific request returned no content, it shows the level of post-upload control the attacker had achieved.*
+*Figure 11: Caido replay demonstrating privileged file-read attempts through the web shell; even where a specific request returned no content, it shows the level of post-upload control the attacker had achieved.*
 
 ![Caido replay successfully reading `/etc/passwd` through the uploaded shell.](./red-team/notes/ctb-export/images/28-6.png)
 
-*Figure 17: Caido replay extracting `/etc/passwd`, confirming that the shell could access local filesystem content beyond the immediate web application files.*
+*Figure 12: Caido replay extracting `/etc/passwd`, confirming that the shell could access local filesystem content beyond the immediate web application files.*
 
 ![Caido replay extracting `credentials.txt` from the compromised web root.](./red-team/notes/ctb-export/images/28-4.png)
 
-*Figure 18: Caido replay retrieving `credentials.txt`, which exposed backend SSH credentials, backend admin CGI details, and Windows database credentials in a form directly usable for lateral movement.*
+*Figure 13: Caido replay retrieving `credentials.txt`, which exposed backend SSH credentials, backend admin CGI details, and Windows database credentials in a form directly usable for lateral movement.*
 
 ### 2.7 Phase Five: Credentialed Lateral Movement to System 2 (`10.0.10.102`)
 
@@ -480,7 +534,7 @@ The decision to use valid `deploy` credentials rather than continue acting only 
 
 ![SSH evidence screenshot one from the backend access branch.](./red-team/notes/ctb-export/images/31-1.png)
 
-*Figure 21: Backend SSH access to `10.0.10.102` after credentials were recovered from the compromised frontend, showing that the second-tier host accepted the stolen `deploy` account.*
+*Figure 14: Backend SSH access to `10.0.10.102` after credentials were recovered from the compromised frontend, showing that the second-tier host accepted the stolen `deploy` account.*
 
 ### 2.8 Phase Six: Local Privilege Escalation and Session Stabilization on System 2
 
@@ -501,15 +555,15 @@ Once the backend shell was stable, the attacker chose to upgrade to Meterpreter,
 
 ![SSH evidence screenshot two from the backend access branch.](./red-team/notes/ctb-export/images/31-2.png)
 
-*Figure 22: Post-SSH backend workflow showing the privilege-escalation stage on System 2, consistent with abuse of a root-owned `.sh` file with unsafe permissions.*
+*Figure 15: Post-SSH backend workflow showing the privilege-escalation stage on System 2, consistent with abuse of a root-owned `.sh` file with unsafe permissions.*
 
 ![Additional SSH post-exploitation screenshot from the System 2 backend workflow.](./red-team/evidence/attack-chain/system-2-ssh-deploy-post-exploitation.png)
 
-*Figure 23: Additional post-exploitation evidence from the `deploy` foothold on System 2, included to show the backend compromise sequence after SSH access and local privilege escalation.*
+*Figure 16: Additional post-exploitation evidence from the `deploy` foothold on System 2, included to show the backend compromise sequence after SSH access and local privilege escalation.*
 
 ![Metasploit shell-to-meterpreter upgrade against the backend host.](./red-team/evidence/attack-chain/system-2-shell-to-meterpreter.png)
 
-*Figure 24: `shell_to_meterpreter` successfully upgrading the System 2 foothold, demonstrating durable post-exploitation control of `10.0.10.102` after the SSH pivot.*
+*Figure 17: `shell_to_meterpreter` successfully upgrading the System 2 foothold, demonstrating durable post-exploitation control of `10.0.10.102` after the SSH pivot.*
 
 ### 2.9 Phase Seven: Internal Discovery and Windows Service Exploitation on System 3 (`10.0.10.106`)
 
@@ -533,27 +587,29 @@ The operator chose Icecast for one reason: it was the cleanest reachable RCE opp
 
 ![Reconnaissance screenshot from the Windows-host branch showing discovery workflow context.](./red-team/notes/ctb-export/images/38-1.png)
 
-*Figure 25: Windows-host reconnaissance screenshot from the note-tree branch used to guide internal targeting and establish the exposed Windows service surface.*
+*Figure 18: Windows-host reconnaissance screenshot from the note-tree branch used to guide internal targeting and establish the exposed Windows service surface.*
 
 ![Follow-on Windows-host screenshot from the HTTP/API branch of reconnaissance.](./red-team/notes/ctb-export/images/39-1.png)
 
-*Figure 26: Follow-on reconnaissance from the Windows-host branch, preserving the pre-exploitation workflow that narrowed attention toward the Icecast service.*
+*Figure 19: Follow-on reconnaissance from the Windows-host branch, preserving the pre-exploitation workflow that narrowed attention toward the Icecast service.*
 
 ![Searchsploit results showing publicly known Icecast vulnerabilities and exploit references.](./red-team/evidence/attack-chain/system-3-icecast-searchsploit.png)
 
-*Figure 27: `searchsploit icecast` output used to confirm that the discovered service on System 3 had a well-known exploitation history, including Windows RCE references.*
+*Figure 20: `searchsploit icecast` output used to confirm that the discovered service on System 3 had a well-known exploitation history, including Windows RCE references.*
 
 ![Metasploit module search identifying the Icecast header exploit.](./red-team/evidence/attack-chain/system-3-icecast-metasploit-module-search.png)
 
-*Figure 28: Metasploit search results identifying `exploit/windows/http/icecast_header`, the module used to convert the Icecast service into remote code execution on System 3.*
+*Figure 21: Metasploit search results identifying `exploit/windows/http/icecast_header`, the module used to convert the Icecast service into remote code execution on System 3.*
 
 ![Artifact discovery and post-exploitation browsing on the compromised Windows jump server.](./red-team/evidence/attack-chain/system-3-post-exploitation-artifacts.png)
 
-*Figure 29: Post-exploitation evidence from System 3 after the Icecast Metasploit compromise, showing interactive access to files, tooling, and sensitive operational artifacts on the Windows jump server.*
+*Figure 22: Post-exploitation evidence from System 3 after the Icecast Metasploit compromise, showing interactive access to files, tooling, and sensitive operational artifacts on the Windows jump server.*
 
 ### 2.10 Consolidated Red-Team Findings Matrix
 
 To keep the chapter analytically consistent, the main offensive findings can be summarized as follows.
+
+Table 4: Consolidated red-team findings matrix with severity, framework lens, and evidence basis.
 
 | ID | Finding | Primary Host | Severity | Framework Lens | CWE | CVSS / Severity Basis |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -631,7 +687,7 @@ This is more important than it first appears. It means the AI pipeline is not a 
 
 ![Splunk query over Event ID 4688 showing process creation telemetry from Windows Security logs.](./blue-team/monitoring/splunk/splunk-dashboard-overview.png)
 
-*Figure 32: Splunk monitoring view demonstrating centralized SIEM visibility for blue-team analysis workflows.*
+*Figure 23: Splunk monitoring view demonstrating centralized SIEM visibility for blue-team analysis workflows.*
 
 ### 3.4 Cowrie Deception Workflow and Event Flow
 
@@ -651,7 +707,7 @@ This control did not prevent the productive compromise path through the web appl
 
 ![Splunk screenshot of the AI-classified Cowrie command stream.](./red-team/notes/ctb-export/images/23-1.png)
 
-*Figure 30: Splunk view of Cowrie command telemetry after AI enrichment, showing that deceptive SSH interactions were centrally collected rather than left stranded on the honeypot host.*
+*Figure 24: Splunk view of Cowrie command telemetry after AI enrichment, showing that deceptive SSH interactions were centrally collected rather than left stranded on the honeypot host.*
 
 ### 3.5 Wazuh Role Separation and Host-Based Detection Intent
 
@@ -700,7 +756,7 @@ This is a meaningful architectural strength. It means the SOC view was already c
 
 ![Splunk statistics query on Windows Event ID 4625 showing failed logon activity by source IP.](./blue-team/monitoring/splunk/splunk-dashboard-overview.png)
 
-*Figure 31: Splunk statistics over Windows Security Event ID 4625, used to correlate account activity and source network addresses as part of the SOC validation workflow.*
+*Figure 25: Splunk statistics over Windows Security Event ID 4625, used to correlate account activity and source network addresses as part of the SOC validation workflow.*
 
 ### 3.8 AI Enrichment Workflow and Analyst Value
 
@@ -727,7 +783,7 @@ The project therefore demonstrates an actual enrichment loop, not just model tra
 
 ![Splunk screenshot of AI-classified Cowrie telemetry.](./red-team/notes/ctb-export/images/23-1.png)
 
-*Figure 33: AI-enriched Cowrie telemetry in Splunk, demonstrating that the DistilBERT classifier's outputs were operationalized rather than remaining an offline experiment.*
+*Figure 26: AI-enriched Cowrie telemetry in Splunk, demonstrating that the DistilBERT classifier's outputs were operationalized rather than remaining an offline experiment.*
 
 ### 3.9 Detection Successes, Detection Gaps, and Control Reality
 
@@ -747,7 +803,7 @@ The blue-team section should not be read as marketing. Some controls worked well
 - the backend host allowed escalation after valid credential use,
 - the Windows service surface still offered internal RCE opportunity.
 
-This is a crucial capstone lesson: detection capability is not the same thing as preventive adequacy. The environment had visibility, but the legacy design still allowed the attacker to move faster than the preventive controls could stop them.
+This is a crucial project lesson: detection capability is not the same thing as preventive adequacy. The environment had visibility, but the legacy design still allowed the attacker to move faster than the preventive controls could stop them.
 
 ### 3.10 Hardening, Migration, and Secure-State Direction
 
